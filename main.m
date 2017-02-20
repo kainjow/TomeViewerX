@@ -2,6 +2,7 @@
 
 int main(int argc, char *argv[])
 {
+#if 0
 	UInt32 t = 0xC8F4E849;
 	CFAbsoluteTime o;
 	if (UCConvertSecondsToCFAbsoluteTime(t, &o) == noErr) {
@@ -15,6 +16,7 @@ int main(int argc, char *argv[])
 		CFStringRef s = CFDateFormatterCreateStringWithDate(kCFAllocatorDefault, fm, d);
 		NSLog(@"s: %@", s);
 	}
-	
+#endif
+
     return NSApplicationMain(argc, (const char **) argv);
 }

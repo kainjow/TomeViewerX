@@ -212,7 +212,7 @@ tome_file_t* tome_get_file(tome_t *tome, uint32_t index)
 {
 	if (!tome)
 		return NULL;
-	if (index < 0 || index >= tome->count)
+	if (index >= tome->count)
 		return NULL;
 	return &tome->files[index];
 }

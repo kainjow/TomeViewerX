@@ -27,7 +27,9 @@
 	if (err != tome_error_success) {
 		NSString *errorStr = [NSString stringWithUTF8String:tome_error_to_string(err)];
 		NSDictionary *userInfo = [NSDictionary dictionaryWithObject:errorStr forKey:NSLocalizedDescriptionKey];
-		*outError = [NSError errorWithDomain:@"TAReaderErrorDomain" code:err userInfo:userInfo];
+        if (outError) {
+            *outError = [NSError errorWithDomain:@"TAReaderErrorDomain" code:err userInfo:userInfo];
+        }
 		return NO;
 	}
 	
